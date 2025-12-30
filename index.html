@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HappyMyTrip - Your trusted travel partner for flights, hotels, buses, car rentals, and holiday packages. Book your dream vacation today!">
+    <meta name="keywords" content="travel agency, flights, hotels, holiday packages, car rental, bus tickets">
+    <title>HappyMyTrip - Your Travel Partner | Flights, Hotels & Holiday Packages</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-plane-departure"></i>
+                    <span>HappyMyTrip</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="hotels.html">Hotels</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Explore the World with HappyMyTrip</h1>
+            <p class="hero-subtitle">Your journey to unforgettable experiences starts here</p>
+            <div class="hero-buttons">
+                <a href="packages.html" class="btn btn-primary">Explore Packages</a>
+                <a href="contact.html" class="btn btn-secondary">Plan Your Trip</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Search -->
+    <section class="quick-search">
+        <div class="container">
+            <div class="search-tabs">
+                <button class="tab-btn active" data-tab="flights"><i class="fas fa-plane"></i> Flights</button>
+                <button class="tab-btn" data-tab="hotels"><i class="fas fa-hotel"></i> Hotels</button>
+                <button class="tab-btn" data-tab="buses"><i class="fas fa-bus"></i> Buses</button>
+                <button class="tab-btn" data-tab="cars"><i class="fas fa-car"></i> Cars</button>
+            </div>
+            <div class="search-content">
+                <div class="tab-content active" id="flights">
+                    <form class="search-form">
+                        <div class="form-group">
+                            <label>From</label>
+                            <input type="text" placeholder="Departure City" required>
+                        </div>
+                        <div class="form-group">
+                            <label>To</label>
+                            <input type="text" placeholder="Arrival City" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Departure</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Return</label>
+                            <input type="date">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Search Flights</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Everything you need for a perfect journey</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3>Flight Booking</h3>
+                    <p>Book domestic and international flights at the best prices with instant confirmation</p>
+                    <a href="flights.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hotel"></i></div>
+                    <h3>Hotel Reservations</h3>
+                    <p>Find and book the perfect accommodation from budget to luxury stays</p>
+                    <a href="hotels.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bus"></i></div>
+                    <h3>Bus Tickets</h3>
+                    <p>Comfortable and affordable bus travel across multiple destinations</p>
+                    <a href="buses.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-car"></i></div>
+                    <h3>Car Rentals</h3>
+                    <p>Rent a car and explore destinations at your own pace and comfort</p>
+                    <a href="cars.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-umbrella-beach"></i></div>
+                    <h3>Holiday Packages</h3>
+                    <p>Curated vacation packages for unforgettable family and romantic getaways</p>
+                    <a href="packages.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for your complete peace of mind</p>
+                    <a href="contact.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations">
+        <div class="container">
+            <h2 class="section-title">Popular Destinations</h2>
+            <p class="section-subtitle">Discover amazing places around the world</p>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800');"></div>
+                    <div class="destination-content">
+                        <h3>Maldives</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Indian Ocean</p>
+                        <div class="destination-price">From $1,299</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800');"></div>
+                    <div class="destination-content">
+                        <h3>Paris</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> France</p>
+                        <div class="destination-price">From $899</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800');"></div>
+                    <div class="destination-content">
+                        <h3>Switzerland</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Europe</p>
+                        <div class="destination-price">From $1,499</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800');"></div>
+                    <div class="destination-content">
+                        <h3>Bali</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Indonesia</p>
+                        <div class="destination-price">From $799</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="destinations.html" class="btn btn-primary">View All Destinations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose HappyMyTrip?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-tag"></i></div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive rates and exclusive deals on all bookings</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Secure Booking</h3>
+                    <p>100% secure payment gateway and data protection</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer service for your convenience</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-star"></i></div>
+                    <h3>Trusted by Millions</h3>
+                    <p>Over 5 million happy travelers worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Travelers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Amazing experience! HappyMyTrip made our honeymoon to Maldives absolutely perfect. Great service and support!"</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah & John</strong>
+                        <span>Maldives Trip</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Best travel agency ever! Booked our entire Europe tour through them. Everything was seamless and well-organized."</p>
+                    <div class="testimonial-author">
+                        <strong>Rajesh Kumar</strong>
+                        <span>Europe Tour</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Excellent customer service and great deals. I always book my business trips through HappyMyTrip. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <strong>Priya Sharma</strong>
+                        <span>Business Traveler</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get exclusive deals and travel inspiration delivered to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane-departure"></i>
+                        <span>HappyMyTrip</span>
+                    </div>
+                    <p>Your trusted travel partner for unforgettable journeys around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="flights.html">Flight Booking</a></li>
+                        <li><a href="hotels.html">Hotel Booking</a></li>
+                        <li><a href="buses.html">Bus Tickets</a></li>
+                        <li><a href="cars.html">Car Rentals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HappyMyTrip. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
