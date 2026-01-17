@@ -3,203 +3,1157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HappyMyTrip - Your trusted travel partner for flights, hotels, buses, car rentals, and holiday packages. Book your dream vacation today!">
-    <meta name="keywords" content="travel agency, flights, hotels, holiday packages, car rental, bus tickets">
-    <title>HappyMyTrip - Your Travel Partner | Flights, Hotels & Holiday Packages</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>HappyMyTrip - Best Travel Agency in Navi Mumbai | Customized Holiday Packages & Flight Booking</title>
+    <meta name="description" content="HappyMyTrip offers personalized travel packages, flight bookings, hotel reservations & car rentals. 8+ years experience, 12k+ happy travelers. Best offline rates guaranteed. Based in Navi Mumbai.">
+    <meta name="keywords" content="travel agency Navi Mumbai, holiday packages India, international tour packages, flight booking, hotel booking, car rental, customized tours, best travel deals, offline flight rates, domestic tours, international tours">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-yellow: #ffce07;
+            --dark-bg: #0a0a0a;
+            --dark-card: #1a1a1a;
+            --dark-lighter: #2a2a2a;
+            --text-white: #ffffff;
+            --text-grey: #b0b0b0;
+            --text-light-grey: #808080;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comfortaa', cursive;
+            background: var(--dark-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 206, 7, 0.1);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 30px rgba(255, 206, 7, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .navbar-brand i {
+            color: var(--primary-yellow);
+            font-size: 2rem;
+        }
+        
+        .navbar-toggler {
+            border-color: var(--primary-yellow);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 206, 7, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .nav-link {
+            color: var(--text-grey);
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-yellow);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-yellow);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary-yellow);
+            color: var(--dark-bg);
+            border: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 206, 7, 0.3);
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 206, 7, 0.5);
+            background: #ffd633;
+            color: var(--dark-bg);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 1) 0%, rgba(26, 26, 26, 1) 100%);
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 206, 7, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 206, 7, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-content h1 .highlight {
+            color: var(--primary-yellow);
+        }
+        
+        .hero-content h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--text-grey);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        /* Search Widget */
+        .search-widget {
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 206, 7, 0.15);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+            margin-top: 3rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .nav-tabs {
+            border: none;
+            margin-bottom: 2rem;
+            gap: 0.5rem;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            background: var(--dark-lighter);
+            color: var(--text-grey);
+            margin-right: 0;
+            border-radius: 10px;
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            background: rgba(255, 206, 7, 0.1);
+            color: var(--primary-yellow);
+        }
+        
+        .nav-tabs .nav-link.active {
+            background: var(--primary-yellow);
+            color: var(--dark-bg);
+        }
+        
+        .form-label {
+            color: var(--text-grey);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .form-control, .form-select {
+            background: var(--dark-lighter);
+            border: 1px solid rgba(255, 206, 7, 0.2);
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+            font-family: 'Comfortaa', cursive;
+            color: var(--text-white);
+            transition: all 0.3s ease;
+        }
+        
+        .form-control::placeholder {
+            color: var(--text-light-grey);
+        }
+        
+        .form-control:focus, .form-select:focus {
+            background: var(--dark-lighter);
+            border-color: var(--primary-yellow);
+            box-shadow: 0 0 0 0.2rem rgba(255, 206, 7, 0.15);
+            color: var(--text-white);
+        }
+        
+        .form-select option {
+            background: var(--dark-card);
+            color: var(--text-white);
+        }
+        
+        /* Trust Counter */
+        .trust-counter {
+            background: var(--dark-card);
+            padding: 4rem 0;
+            border-top: 1px solid rgba(255, 206, 7, 0.1);
+            border-bottom: 1px solid rgba(255, 206, 7, 0.1);
+        }
+        
+        .counter-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .counter-item i {
+            font-size: 3rem;
+            color: var(--primary-yellow);
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .counter-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-white);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .counter-label {
+            font-size: 1rem;
+            color: var(--text-grey);
+            font-weight: 500;
+        }
+        
+        /* Deal of the Day */
+        .deal-section {
+            padding: 5rem 0;
+            background: var(--dark-bg);
+        }
+        
+        .deal-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 206, 7, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .deal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 206, 7, 0.2);
+            border-color: rgba(255, 206, 7, 0.3);
+        }
+        
+        .deal-image {
+            height: 300px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .deal-image::before {
+            content: '🏔️';
+            font-size: 8rem;
+            opacity: 0.3;
+        }
+        
+        .deal-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-yellow);
+            color: var(--dark-bg);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .deal-content {
+            padding: 2rem;
+        }
+        
+        .deal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+        
+        .deal-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .deal-features li {
+            padding: 0.5rem 0;
+            color: var(--text-grey);
+        }
+        
+        .deal-features li i {
+            color: var(--primary-yellow);
+            margin-right: 0.5rem;
+        }
+        
+        .deal-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-yellow);
+            margin: 1.5rem 0;
+        }
+        
+        /* Why Choose Us */
+        .why-choose {
+            background: var(--dark-card);
+            padding: 5rem 0;
+        }
+        
+        .feature-card {
+            background: var(--dark-lighter);
+            border: 1px solid rgba(255, 206, 7, 0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 206, 7, 0.3);
+            box-shadow: 0 15px 40px rgba(255, 206, 7, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+        
+        .feature-card p {
+            color: var(--text-grey);
+            line-height: 1.8;
+        }
+        
+        /* Destinations Preview */
+        .destinations-preview {
+            padding: 5rem 0;
+            background: var(--dark-bg);
+        }
+        
+        .destination-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 206, 7, 0.1);
+        }
+        
+        .destination-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.9) 100%);
+            z-index: 1;
+        }
+        
+        .destination-card:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 206, 7, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 206, 7, 0.2);
+        }
+        
+        .destination-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .destination-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            z-index: 2;
+            color: white;
+        }
+        
+        .destination-overlay h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-white);
+        }
+        
+        .destination-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: var(--text-grey);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--dark-card);
+            padding: 5rem 0;
+        }
+        
+        .testimonial-card {
+            background: var(--dark-lighter);
+            border: 1px solid rgba(255, 206, 7, 0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: rgba(255, 206, 7, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .stars {
+            color: var(--primary-yellow);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-grey);
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--text-white);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(255, 206, 7, 0.1) 0%, rgba(255, 206, 7, 0.05) 100%);
+            border-top: 1px solid rgba(255, 206, 7, 0.2);
+            border-bottom: 1px solid rgba(255, 206, 7, 0.2);
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--text-grey);
+            margin-bottom: 2rem;
+        }
+        
+        .btn-dark-custom {
+            background: var(--primary-yellow);
+            color: var(--dark-bg);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-dark-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 206, 7, 0.4);
+            background: #ffd633;
+            color: var(--dark-bg);
+        }
+        
+        .btn-white-custom {
+            background: transparent;
+            color: var(--text-white);
+            border: 2px solid var(--primary-yellow);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-white-custom:hover {
+            transform: translateY(-2px);
+            background: var(--primary-yellow);
+            color: var(--dark-bg);
+            box-shadow: 0 6px 25px rgba(255, 206, 7, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-card);
+            color: var(--text-grey);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 206, 7, 0.1);
+        }
+        
+        footer h5 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-yellow);
+        }
+        
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        footer ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        footer a {
+            color: var(--text-grey);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--primary-yellow);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 206, 7, 0.1);
+            color: var(--primary-yellow);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary-yellow);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 206, 7, 0.1);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-light-grey);
+        }
+        
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title h2 .highlight {
+            color: var(--primary-yellow);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-grey);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1rem;
+            }
+            
+            .search-widget {
+                padding: 1.5rem;
+            }
+            
+            .counter-number {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .nav-tabs .nav-link {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <i class="fas fa-plane-departure"></i>
-                    <span>HappyMyTrip</span>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="destinations.html">Destinations</a></li>
-                    <li><a href="packages.html">Packages</a></li>
-                    <li><a href="hotels.html">Hotels</a></li>
-                    <li><a href="flights.html">Flights</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-plane-departure"></i>
+                HappyMyTrip
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#holidays">Holidays</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#flights">Flights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hotels">Hotels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cars">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item">
+                        <a href="#contact" class="btn btn-primary-custom">Request a Quote</a>
+                    </li>
                 </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Explore the World with HappyMyTrip</h1>
-            <p class="hero-subtitle">Your journey to unforgettable experiences starts here</p>
-            <div class="hero-buttons">
-                <a href="packages.html" class="btn btn-primary">Explore Packages</a>
-                <a href="contact.html" class="btn btn-secondary">Plan Your Trip</a>
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12" data-aos="fade-up">
+                    <div class="hero-content text-center">
+                        <h1>Travel Dreams Take <span class="highlight">Flight</span> ✈️</h1>
+                        <h2>Tailored journeys with human-touch expertise. Experience the joy of stress-free travel with India's most trusted travel partner.</h2>
+                    </div>
+                    
+                    <!-- Search Widget -->
+                    <div class="search-widget" data-aos="fade-up" data-aos-delay="200">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#flights-tab">
+                                    <i class="fas fa-plane"></i> Flights
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#holidays-tab">
+                                    <i class="fas fa-umbrella-beach"></i> Holidays
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#hotels-tab">
+                                    <i class="fas fa-hotel"></i> Hotels
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cars-tab">
+                                    <i class="fas fa-car"></i> Cars
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content">
+                            <!-- Flights Tab -->
+                            <div class="tab-pane fade show active" id="flights-tab">
+                                <form action="#contact" method="get">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">From</label>
+                                            <input type="text" class="form-control" placeholder="City or Airport" name="from">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">To</label>
+                                            <input type="text" class="form-control" placeholder="City or Airport" name="to">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Departure</label>
+                                            <input type="date" class="form-control" name="departure">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Return</label>
+                                            <input type="date" class="form-control" name="return">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Time Preference</label>
+                                            <select class="form-select" name="time">
+                                                <option>Morning</option>
+                                                <option>Afternoon</option>
+                                                <option>Evening</option>
+                                                <option>Flexible</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Travelers</label>
+                                            <input type="number" class="form-control" value="1" min="1" name="travelers">
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary-custom w-100 py-3">
+                                                <i class="fas fa-search"></i> Get Best Offline Rates
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Holidays Tab -->
+                            <div class="tab-pane fade" id="holidays-tab">
+                                <form action="#contact" method="get">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Destination</label>
+                                            <input type="text" class="form-control" placeholder="Where do you want to go?" name="destination">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Travel Type</label>
+                                            <select class="form-select" name="type">
+                                                <option>Domestic</option>
+                                                <option>International</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Duration</label>
+                                            <select class="form-select" name="duration">
+                                                <option>2-3 Days</option>
+                                                <option>4-6 Days</option>
+                                                <option>7-10 Days</option>
+                                                <option>10+ Days</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Travel Date</label>
+                                            <input type="date" class="form-control" name="date">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Travelers</label>
+                                            <input type="number" class="form-control" value="2" min="1" name="travelers">
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary-custom w-100 py-3">
+                                                <i class="fas fa-search"></i> Find My Perfect Holiday
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Hotels Tab -->
+                            <div class="tab-pane fade" id="hotels-tab">
+                                <form action="#contact" method="get">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Destination</label>
+                                            <input type="text" class="form-control" placeholder="City or Location" name="location">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Star Rating</label>
+                                            <select class="form-select" name="rating">
+                                                <option>Any</option>
+                                                <option>3 Star</option>
+                                                <option>4 Star</option>
+                                                <option>5 Star</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Check-in</label>
+                                            <input type="date" class="form-control" name="checkin">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Check-out</label>
+                                            <input type="date" class="form-control" name="checkout">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Guests</label>
+                                            <input type="number" class="form-control" value="2" min="1" name="guests">
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary-custom w-100 py-3">
+                                                <i class="fas fa-search"></i> Search Hotels
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Cars Tab -->
+                            <div class="tab-pane fade" id="cars-tab">
+                                <form action="#contact" method="get">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Pickup Location</label>
+                                            <input type="text" class="form-control" placeholder="City or Address" name="pickup">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Drop Location</label>
+                                            <input type="text" class="form-control" placeholder="City or Address" name="drop">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Pickup Date</label>
+                                            <input type="date" class="form-control" name="pickupdate">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Return Date</label>
+                                            <input type="date" class="form-control" name="returndate">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Vehicle Type</label>
+                                            <select class="form-select" name="vehicle">
+                                                <option>Sedan</option>
+                                                <option>SUV</option>
+                                                <option>Tempo Traveller</option>
+                                                <option>Bus</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary-custom w-100 py-3">
+                                                <i class="fas fa-search"></i> Book Your Ride
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Quick Search -->
-    <section class="quick-search">
+    <!-- Trust Counter -->
+    <section class="trust-counter">
         <div class="container">
-            <div class="search-tabs">
-                <button class="tab-btn active" data-tab="flights"><i class="fas fa-plane"></i> Flights</button>
-                <button class="tab-btn" data-tab="hotels"><i class="fas fa-hotel"></i> Hotels</button>
-                <button class="tab-btn" data-tab="buses"><i class="fas fa-bus"></i> Buses</button>
-                <button class="tab-btn" data-tab="cars"><i class="fas fa-car"></i> Cars</button>
-            </div>
-            <div class="search-content">
-                <div class="tab-content active" id="flights">
-                    <form class="search-form">
-                        <div class="form-group">
-                            <label>From</label>
-                            <input type="text" placeholder="Departure City" required>
-                        </div>
-                        <div class="form-group">
-                            <label>To</label>
-                            <input type="text" placeholder="Arrival City" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Departure</label>
-                            <input type="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Return</label>
-                            <input type="date">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Search Flights</button>
-                    </form>
+            <div class="row">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="counter-item">
+                        <i class="fas fa-trophy"></i>
+                        <span class="counter-number">8+</span>
+                        <span class="counter-label">Years of Excellence</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="counter-item">
+                        <i class="fas fa-heart"></i>
+                        <span class="counter-number">12,000+</span>
+                        <span class="counter-label">Happy Travelers</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="counter-item">
+                        <i class="fas fa-globe"></i>
+                        <span class="counter-number">450+</span>
+                        <span class="counter-label">Destinations Covered</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="counter-item">
+                        <i class="fas fa-star"></i>
+                        <span class="counter-number">5.0</span>
+                        <span class="counter-label">Star Reviews</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-overview">
+    <!-- Deal of the Day -->
+    <section class="deal-section">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Everything you need for a perfect journey</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
-                    <h3>Flight Booking</h3>
-                    <p>Book domestic and international flights at the best prices with instant confirmation</p>
-                    <a href="flights.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-hotel"></i></div>
-                    <h3>Hotel Reservations</h3>
-                    <p>Find and book the perfect accommodation from budget to luxury stays</p>
-                    <a href="hotels.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-bus"></i></div>
-                    <h3>Bus Tickets</h3>
-                    <p>Comfortable and affordable bus travel across multiple destinations</p>
-                    <a href="buses.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-car"></i></div>
-                    <h3>Car Rentals</h3>
-                    <p>Rent a car and explore destinations at your own pace and comfort</p>
-                    <a href="cars.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-umbrella-beach"></i></div>
-                    <h3>Holiday Packages</h3>
-                    <p>Curated vacation packages for unforgettable family and romantic getaways</p>
-                    <a href="packages.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-headset"></i></div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock customer support for your complete peace of mind</p>
-                    <a href="contact.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+            <div class="section-title" data-aos="fade-up">
+                <h2>✨ Today's <span class="highlight">Golden Offer</span></h2>
+                <p>Limited time deals you don't want to miss</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Popular Destinations -->
-    <section class="destinations">
-        <div class="container">
-            <h2 class="section-title">Popular Destinations</h2>
-            <p class="section-subtitle">Discover amazing places around the world</p>
-            <div class="destinations-grid">
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800');"></div>
-                    <div class="destination-content">
-                        <h3>Maldives</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Indian Ocean</p>
-                        <div class="destination-price">From $1,299</div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="deal-card">
+                        <div class="deal-image">
+                            <div class="deal-badge">Limited Offer</div>
+                        </div>
+                        <div class="deal-content">
+                            <h3 class="deal-title">Kashmir Paradise Package</h3>
+                            <p style="color: var(--text-grey);">5 Nights / 6 Days</p>
+                            <ul class="deal-features">
+                                <li><i class="fas fa-check-circle"></i> Srinagar • Gulmarg • Pahalgam • Sonmarg</li>
+                                <li><i class="fas fa-check-circle"></i> Houseboat Stay Included</li>
+                                <li><i class="fas fa-check-circle"></i> Shikara Ride & Gondola</li>
+                                <li><i class="fas fa-check-circle"></i> All Meals & Transfers</li>
+                            </ul>
+                            <div class="deal-price">Starting from: ₹18,999/person</div>
+                            <a href="#contact" class="btn btn-primary-custom w-100">Check Availability</a>
+                        </div>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800');"></div>
-                    <div class="destination-content">
-                        <h3>Paris</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> France</p>
-                        <div class="destination-price">From $899</div>
-                    </div>
-                </div>
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800');"></div>
-                    <div class="destination-content">
-                        <h3>Switzerland</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Europe</p>
-                        <div class="destination-price">From $1,499</div>
-                    </div>
-                </div>
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800');"></div>
-                    <div class="destination-content">
-                        <h3>Bali</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Indonesia</p>
-                        <div class="destination-price">From $799</div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 40px;">
-                <a href="destinations.html" class="btn btn-primary">View All Destinations</a>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="why-choose">
+    <section class="why-choose" id="about">
         <div class="container">
-            <h2 class="section-title">Why Choose HappyMyTrip?</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-tag"></i></div>
-                    <h3>Best Prices</h3>
-                    <p>Competitive rates and exclusive deals on all bookings</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Why <span class="highlight">12,000+</span> Travelers Choose HappyMyTrip</h2>
+                <p>Experience the difference of personalized travel planning</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">👤</div>
+                        <h3>Personalized Planning</h3>
+                        <p>No bots. Just experienced travel experts who understand your unique travel style and preferences.</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Secure Booking</h3>
-                    <p>100% secure payment gateway and data protection</p>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Best Price Guarantee</h3>
+                        <p>We hunt for offline and GDS rates that online portals miss. Save 15-25% on every booking.</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock customer service for your convenience</p>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>100% Secure & Reliable</h3>
+                        <p>IATA certified, government-approved with 8+ years of proven track record.</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-star"></i></div>
-                    <h3>Trusted by Millions</h3>
-                    <p>Over 5 million happy travelers worldwide</p>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>24/7 Support</h3>
+                        <p>From booking to return, we're just a WhatsApp away. Real humans, not bots.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Preview -->
+    <section class="destinations-preview" id="holidays">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Explore <span class="highlight">Dream Destinations</span></h2>
+                <p>From spiritual journeys to exotic beaches, we curate experiences that create lifelong memories</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-4" data-aos="fade-up" style="color: var(--text-white);">Domestic Destinations</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800" alt="Maharashtra" class="destination-image">
+                                <div class="destination-overlay">
+                                    <h3>Maharashtra Special</h3>
+                                    <p>Shirdi • Jyotirlinga • Konkan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Hill Stations" class="destination-image">
+                                <div class="destination-overlay">
+                                    <h3>Hill Stations</h3>
+                                    <p>Manali • Shimla • Munnar</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Beaches" class="destination-image">
+                                <div class="destination-overlay">
+                                    <h3>Beach Paradise</h3>
+                                    <p>Goa • Andaman • Kerala</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800" alt="Rajasthan" class="destination-image">
+                                <div class="destination-overlay">
+                                    <h3>Royal Heritage</h3>
+                                    <p>Jaipur • Udaipur • Jodhpur</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#contact" class="btn btn-primary-custom">Explore All Domestic Destinations</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h3 class="mb-4" data-aos="fade-up" style="color: var(--text-white);">International Destinations</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="Dubai" class="destination-image">
+                                <div class="destination-overlay">
+                                    <h3>Short-Haul Favorites</h3>
+                                    <p>Dubai • Singapore • Thailand</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800" alt="Maldives" class="destination-image">
+                                <div class="destination-overlay">
+                                    <h3>Exotic Islands</h3>
+                                    <p>Maldives • Mauritius • Bali</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800" alt="Europe" class="destination-image">
+                                <div class="destination-overlay">
+                                    <h3>European Dreams</h3>
+                                    <p>Switzerland • Paris • Italy</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="destination-card">
+                                <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800" alt="Turkey" class="destination-image">
+                                <div class="destination-overlay">
+                                    <h3>Cultural Wonders</h3>
+                                    <p>Turkey • Egypt • Vietnam</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#contact" class="btn btn-primary-custom">Explore International Packages</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -208,119 +1162,195 @@
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Travelers Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Amazing experience! HappyMyTrip made our honeymoon to Maldives absolutely perfect. Great service and support!"</p>
-                    <div class="testimonial-author">
-                        <strong>Sarah & John</strong>
-                        <span>Maldives Trip</span>
+            <div class="section-title" data-aos="fade-up">
+                <h2>What Our <span class="highlight">Happy Travelers</span> Say ❤️</h2>
+                <p>Real experiences from real travelers</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The best price for our family holiday to Goa. The team understood exactly what we wanted and delivered beyond expectations. Personalized service at its best!"</p>
+                        <p class="testimonial-author">— Aditi Gupta, Mumbai</p>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Best travel agency ever! Booked our entire Europe tour through them. Everything was seamless and well-organized."</p>
-                    <div class="testimonial-author">
-                        <strong>Rajesh Kumar</strong>
-                        <span>Europe Tour</span>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Highly recommend HappyMyTrip for corporate bookings. Very efficient, professional, and saved our company significant costs on international flights."</p>
+                        <p class="testimonial-author">— Vikram Sharma, Corporate Manager</p>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Excellent customer service and great deals. I always book my business trips through HappyMyTrip. Highly recommended!"</p>
-                    <div class="testimonial-author">
-                        <strong>Priya Sharma</strong>
-                        <span>Business Traveler</span>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Our Kashmir honeymoon was magical! Every detail was perfect - from the houseboat to the Gondola ride. Thank you HappyMyTrip for making our dream come true."</p>
+                        <p class="testimonial-author">— Priya & Rahul, Navi Mumbai</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
         <div class="container">
-            <div class="newsletter-content">
-                <h2>Subscribe to Our Newsletter</h2>
-                <p>Get exclusive deals and travel inspiration delivered to your inbox</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+            <div data-aos="fade-up">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Let our travel experts craft your perfect getaway</p>
+                <a href="mailto:care@happymytrip.com" class="btn btn-dark-custom">Request a Free Quote</a>
+                <a href="tel:+919619584583" class="btn btn-white-custom">Call Us Now: +91 96195 84583</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <i class="fas fa-plane-departure"></i>
-                        <span>HappyMyTrip</span>
-                    </div>
-                    <p>Your trusted travel partner for unforgettable journeys around the world.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5>About HappyMyTrip</h5>
+                    <p>Your trusted travel partner since 2017. Making travel accessible and joyful for everyone.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/919619584583"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Quick Links</h5>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="destinations.html">Destinations</a></li>
-                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#holidays">Holidays</a></li>
+                        <li><a href="#flights">Flights</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Destinations</h5>
                     <ul>
-                        <li><a href="flights.html">Flight Booking</a></li>
-                        <li><a href="hotels.html">Hotel Booking</a></li>
-                        <li><a href="buses.html">Bus Tickets</a></li>
-                        <li><a href="cars.html">Car Rentals</a></li>
+                        <li><a href="#contact">Kashmir Packages</a></li>
+                        <li><a href="#contact">Goa Tours</a></li>
+                        <li><a href="#contact">Dubai Holidays</a></li>
+                        <li><a href="#contact">Maldives Honeymoon</a></li>
+                        <li><a href="#contact">Rajasthan Tours</a></li>
+                        <li><a href="#contact">Kerala Backwaters</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Us</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--primary-yellow); margin-right: 10px;"></i>
+                            203, Sai Anant Apartment,<br>
+                            <span style="padding-left: 25px;">Sector 19/C, Koparkhairane,</span><br>
+                            <span style="padding-left: 25px;">Navi Mumbai - 400709</span>
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <i class="fas fa-phone" style="color: var(--primary-yellow); margin-right: 10px;"></i>
+                            <a href="tel:+919619584583">+91 96195 84583</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="color: var(--primary-yellow); margin-right: 10px;"></i>
+                            <a href="mailto:care@happymytrip.com">care@happymytrip.com</a>
+                        </li>
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 HappyMyTrip. All rights reserved.</p>
+                <p>&copy; 2024 HappyMyTrip. All Rights Reserved.</p>
+                <p style="margin-top: 0.5rem;">IATA Certified | Government Approved | Secure Payment Gateway</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919619584583" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Counter animation
+        const counters = document.querySelectorAll('.counter-number');
+        const speed = 200;
+        
+        const animateCounter = (counter) => {
+            const target = counter.innerText;
+            const isPlus = target.includes('+');
+            const numericTarget = parseFloat(target.replace(/[^0-9.]/g, ''));
+            const increment = numericTarget / speed;
+            let current = 0;
+            
+            const updateCounter = () => {
+                current += increment;
+                if (current < numericTarget) {
+                    counter.innerText = Math.ceil(current) + (isPlus ? '+' : '');
+                    setTimeout(updateCounter, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            
+            updateCounter();
+        };
+        
+        // Intersection Observer for counter animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    animateCounter(counter);
+                    observer.unobserve(counter);
+                }
+            });
+        }, observerOptions);
+        
+        counters.forEach(counter => observer.observe(counter));
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
