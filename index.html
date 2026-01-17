@@ -68,9 +68,9 @@
             gap: 0.5rem;
         }
         
-        .navbar-brand i {
-            color: var(--primary-yellow);
-            font-size: 2rem;
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
         }
         
         .navbar-toggler {
@@ -631,6 +631,11 @@
             color: var(--text-light-grey);
         }
         
+        .footer-logo {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+        
         /* WhatsApp Float Button */
         .whatsapp-float {
             position: fixed;
@@ -654,6 +659,7 @@
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+            color: white;
         }
         
         @keyframes pulse {
@@ -715,6 +721,10 @@
                 font-size: 0.85rem;
                 padding: 0.6rem 1rem;
             }
+            
+            .navbar-brand img {
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -724,8 +734,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-plane-departure"></i>
-                HappyMyTrip
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/84b31048-4852-45ba-ae66-49a1a7ff59b7/2026-01-17T14-15-49-346Z-84b5fd9d-chat-image-1768659349323-0.jpg" alt="HappyMyTrip Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -785,7 +794,7 @@
                         <div class="tab-content">
                             <!-- Flights Tab -->
                             <div class="tab-pane fade show active" id="flights-tab">
-                                <form action="#contact" method="get">
+                                <form action="mailto:care@happymytrip.com" method="get">
                                     <div class="row g-3">
                                         <div class="col-md-6">
                                             <label class="form-label">From</label>
@@ -827,7 +836,7 @@
                             
                             <!-- Holidays Tab -->
                             <div class="tab-pane fade" id="holidays-tab">
-                                <form action="#contact" method="get">
+                                <form action="mailto:care@happymytrip.com" method="get">
                                     <div class="row g-3">
                                         <div class="col-md-6">
                                             <label class="form-label">Destination</label>
@@ -868,7 +877,7 @@
                             
                             <!-- Hotels Tab -->
                             <div class="tab-pane fade" id="hotels-tab">
-                                <form action="#contact" method="get">
+                                <form action="mailto:care@happymytrip.com" method="get">
                                     <div class="row g-3">
                                         <div class="col-md-6">
                                             <label class="form-label">Destination</label>
@@ -906,7 +915,7 @@
                             
                             <!-- Cars Tab -->
                             <div class="tab-pane fade" id="cars-tab">
-                                <form action="#contact" method="get">
+                                <form action="mailto:care@happymytrip.com" method="get">
                                     <div class="row g-3">
                                         <div class="col-md-6">
                                             <label class="form-label">Pickup Location</label>
@@ -1008,7 +1017,7 @@
                                 <li><i class="fas fa-check-circle"></i> All Meals & Transfers</li>
                             </ul>
                             <div class="deal-price">Starting from: ₹18,999/person</div>
-                            <a href="#contact" class="btn btn-primary-custom w-100">Check Availability</a>
+                            <a href="mailto:care@happymytrip.com?subject=Kashmir Paradise Package Enquiry" class="btn btn-primary-custom w-100">Check Availability</a>
                         </div>
                     </div>
                 </div>
@@ -1042,8 +1051,8 @@
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-card">
                         <div class="feature-icon">🛡️</div>
-                        <h3>100% Secure & Reliable</h3>
-                        <p>IATA certified, government-approved with 8+ years of proven track record.</p>
+                        <h3>Trusted & Certified</h3>
+                        <p>Proud members of ADTOI & ETTAA with 8+ years of proven track record in the travel industry.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
@@ -1107,7 +1116,7 @@
                         </div>
                     </div>
                     <div class="text-center mt-4">
-                        <a href="#contact" class="btn btn-primary-custom">Explore All Domestic Destinations</a>
+                        <a href="mailto:care@happymytrip.com?subject=Domestic Destinations Enquiry" class="btn btn-primary-custom">Explore All Domestic Destinations</a>
                     </div>
                 </div>
                 
@@ -1152,7 +1161,7 @@
                         </div>
                     </div>
                     <div class="text-center mt-4">
-                        <a href="#contact" class="btn btn-primary-custom">Explore International Packages</a>
+                        <a href="mailto:care@happymytrip.com?subject=International Destinations Enquiry" class="btn btn-primary-custom">Explore International Packages</a>
                     </div>
                 </div>
             </div>
@@ -1199,7 +1208,7 @@
             <div data-aos="fade-up">
                 <h2>Ready to Start Your Journey?</h2>
                 <p>Let our travel experts craft your perfect getaway</p>
-                <a href="mailto:care@happymytrip.com" class="btn btn-dark-custom">Request a Free Quote</a>
+                <a href="mailto:care@happymytrip.com?subject=Travel Enquiry" class="btn btn-dark-custom">Request a Free Quote</a>
                 <a href="tel:+919619584583" class="btn btn-white-custom">Call Us Now: +91 96195 84583</a>
             </div>
         </div>
@@ -1210,14 +1219,14 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
-                    <h5>About HappyMyTrip</h5>
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/84b31048-4852-45ba-ae66-49a1a7ff59b7/2026-01-17T14-15-49-346Z-84b5fd9d-chat-image-1768659349323-0.jpg" alt="HappyMyTrip Logo" class="footer-logo">
                     <p>Your trusted travel partner since 2017. Making travel accessible and joyful for everyone.</p>
                     <div class="social-icons mt-3">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/919619584583"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/happymytrip" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/happymytrip_" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/HappyMyTrip_" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/happymytrip-com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/919619584583" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -1234,12 +1243,12 @@
                 <div class="col-lg-3 col-md-6">
                     <h5>Popular Destinations</h5>
                     <ul>
-                        <li><a href="#contact">Kashmir Packages</a></li>
-                        <li><a href="#contact">Goa Tours</a></li>
-                        <li><a href="#contact">Dubai Holidays</a></li>
-                        <li><a href="#contact">Maldives Honeymoon</a></li>
-                        <li><a href="#contact">Rajasthan Tours</a></li>
-                        <li><a href="#contact">Kerala Backwaters</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Kashmir Package Enquiry">Kashmir Packages</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Goa Tour Enquiry">Goa Tours</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Dubai Holiday Enquiry">Dubai Holidays</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Maldives Honeymoon Enquiry">Maldives Honeymoon</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Rajasthan Tour Enquiry">Rajasthan Tours</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Kerala Backwaters Enquiry">Kerala Backwaters</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -1265,13 +1274,13 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2024 HappyMyTrip. All Rights Reserved.</p>
-                <p style="margin-top: 0.5rem;">IATA Certified | Government Approved | Secure Payment Gateway</p>
+                <p style="margin-top: 0.5rem;">Proud Members: ADTOI (Association of Domestic Tour Operators of India) | ETTAA (Enterprising Travel & Tourism Agents Association)</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/919619584583" target="_blank" class="whatsapp-float">
+    <a href="https://wa.me/919619584583?text=Hi%20HappyMyTrip!%20I%20would%20like%20to%20enquire%20about%20travel%20packages." target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
