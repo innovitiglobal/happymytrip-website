@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog - Tips, Guides & Inspiration | HappyMyTrip</title>
+    <meta name="description" content="Explore travel tips, destination guides, and travel inspiration from HappyMyTrip experts. Plan your perfect journey with insider knowledge.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --accent-yellow: #ffce07;
+            --dark-bg: #000000;
+            --dark-card: #1a1a1a;
+            --dark-grey: #2a2a2a;
+            --medium-grey: #3a3a3a;
+            --light-grey: #4a4a4a;
+            --text-white: #ffffff;
+            --text-grey: #cccccc;
+            --text-muted: #999999;
+            --border-grey: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comfortaa', cursive;
+            background: var(--dark-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-grey);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .navbar-toggler {
+            border-color: var(--border-grey);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .nav-link {
+            color: var(--text-grey);
+            font-weight: 500;
+            margin: 0 0.8rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--text-white);
+        }
+        
+        .btn-primary-custom {
+            background: var(--accent-yellow);
+            color: var(--dark-bg);
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background: #ffd633;
+            color: var(--dark-bg);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: var(--dark-card);
+            padding: 120px 0 60px;
+            border-bottom: 1px solid var(--border-grey);
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 0.8rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        
+        /* Blog Section */
+        .blog-section {
+            padding: 4rem 0;
+        }
+        
+        .blog-card {
+            background: var(--dark-card);
+            border: 1px solid var(--border-grey);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--light-grey);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-category {
+            display: inline-block;
+            background: var(--dark-grey);
+            color: var(--text-grey);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+        
+        .blog-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-grey);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-card);
+            color: var(--text-grey);
+            padding: 3rem 0 1.5rem;
+            border-top: 1px solid var(--border-grey);
+            margin-top: 4rem;
+        }
+        
+        footer h5 {
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-white);
+            font-size: 1rem;
+        }
+        
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        footer ul li {
+            margin-bottom: 0.7rem;
+        }
+        
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        footer a:hover {
+            color: var(--text-white);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: var(--dark-grey);
+            color: var(--text-grey);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            margin-right: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .social-icons a:hover {
+            background: var(--medium-grey);
+            color: var(--text-white);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-grey);
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 1rem;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 55px;
+            font-size: 26px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand img {
+                height: 38px;
+            }
+            
+            .blog-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/84b31048-4852-45ba-ae66-49a1a7ff59b7/2026-01-17T14-15-49-346Z-84b5fd9d-chat-image-1768659349323-0.jpg" alt="HappyMyTrip">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="holidays.html">Holidays</a></li>
+                    <li class="nav-item"><a class="nav-link" href="flights.html">Flights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hotels.html">Hotels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="btn btn-primary-custom">Get Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">Travel Blog</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Expert tips, destination guides, and travel inspiration</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Blog Post 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Kashmir Travel Guide" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">Destination Guide</span>
+                            <h3 class="blog-title">Complete Kashmir Travel Guide: Best Time to Visit</h3>
+                            <p class="blog-excerpt">Discover the best time to visit Kashmir, must-see attractions, and insider tips for an unforgettable trip to paradise on earth.</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> Jan 15, 2024</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Goa Travel Tips" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">Travel Tips</span>
+                            <h3 class="blog-title">10 Hidden Beaches in Goa You Must Visit</h3>
+                            <p class="blog-excerpt">Escape the crowds and discover Goa's secret beaches. From Butterfly Beach to Kakolem, explore pristine shores away from tourist hotspots.</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> Jan 12, 2024</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="Dubai Travel" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">International</span>
+                            <h3 class="blog-title">Dubai on a Budget: How to Save Money</h3>
+                            <p class="blog-excerpt">Think Dubai is expensive? Think again! Learn how to experience luxury Dubai without breaking the bank with these money-saving tips.</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> Jan 10, 2024</span>
+                                <span><i class="far fa-clock"></i> 7 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800" alt="Rajasthan Heritage" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">Culture</span>
+                            <h3 class="blog-title">Exploring Rajasthan's Majestic Forts and Palaces</h3>
+                            <p class="blog-excerpt">Journey through Rajasthan's royal heritage. From Amber Fort to City Palace, discover the architectural marvels of the Land of Kings.</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> Jan 8, 2024</span>
+                                <span><i class="far fa-clock"></i> 8 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800" alt="Kerala Backwaters" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">Experience</span>
+                            <h3 class="blog-title">Kerala Houseboat Experience: A Complete Guide</h3>
+                            <p class="blog-excerpt">Everything you need to know about Kerala houseboat stays. From booking tips to what to expect, plan your perfect backwater cruise.</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> Jan 5, 2024</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800" alt="Maldives Honeymoon" class="blog-image">
+                        <div class="blog-content">
+                            <span class="blog-category">Honeymoon</span>
+                            <h3 class="blog-title">Planning the Perfect Maldives Honeymoon</h3>
+                            <p class="blog-excerpt">Make your Maldives honeymoon unforgettable. Best resorts, romantic experiences, and tips for a dreamy island escape.</p>
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> Jan 3, 2024</span>
+                                <span><i class="far fa-clock"></i> 9 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <p style="color: var(--text-muted);">More travel stories and guides coming soon! Follow us on social media for daily travel inspiration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/84b31048-4852-45ba-ae66-49a1a7ff59b7/2026-01-17T14-15-49-346Z-84b5fd9d-chat-image-1768659349323-0.jpg" alt="HappyMyTrip" class="footer-logo">
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">Your trusted travel partner since 2017. Creating memorable journeys across the globe.</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.facebook.com/happymytrip" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/happymytrip_" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/HappyMyTrip_" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/happymytrip-com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/919619584583" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="flights.html">Flight Booking</a></li>
+                        <li><a href="hotels.html">Hotels</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Packages</h5>
+                    <ul>
+                        <li><a href="package-kashmir.html">Kashmir Paradise</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Goa Enquiry">Goa Beach Escape</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Dubai Enquiry">Dubai Extravaganza</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Maldives Enquiry">Maldives Honeymoon</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Rajasthan Enquiry">Royal Rajasthan</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Kerala Enquiry">Kerala Backwaters</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem; font-size: 0.9rem;">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>
+                            203, Sai Anant Apartment,<br>
+                            <span style="padding-left: 20px;">Sector 19/C, Koparkhairane,</span><br>
+                            <span style="padding-left: 20px;">Navi Mumbai - 400709</span>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;">
+                            <i class="fas fa-phone" style="margin-right: 8px;"></i>
+                            <a href="tel:+919619584583">+91 96195 84583</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+                            <a href="mailto:care@happymytrip.com">care@happymytrip.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 HappyMyTrip. All Rights Reserved.</p>
+                <p style="margin-top: 0.5rem;">Proud Members: ADTOI | ETTAA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919619584583?text=Hi%20HappyMyTrip!%20I%20have%20a%20travel%20query." target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>
