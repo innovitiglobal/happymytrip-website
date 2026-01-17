@@ -3,263 +3,580 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact HappyMyTrip - Get in touch with our travel experts for bookings, inquiries, and support">
-    <title>Contact Us - HappyMyTrip</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Contact Us - HappyMyTrip | Get in Touch for Travel Enquiries</title>
+    <meta name="description" content="Contact HappyMyTrip for personalized travel planning. Call +91 96195 84583 or email care@happymytrip.com. Visit our office in Navi Mumbai.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-        .contact-page {
-            background: var(--bg-light);
+        :root {
+            --accent-yellow: #ffce07;
+            --dark-bg: #000000;
+            --dark-card: #1a1a1a;
+            --dark-grey: #2a2a2a;
+            --medium-grey: #3a3a3a;
+            --light-grey: #4a4a4a;
+            --text-white: #ffffff;
+            --text-grey: #cccccc;
+            --text-muted: #999999;
+            --border-grey: #333333;
         }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .contact-info-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
+        
+        body {
+            font-family: 'Comfortaa', cursive;
+            background: var(--dark-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
         }
-        .contact-info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-grey);
+            padding: 1rem 0;
         }
-        .contact-info-card i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+        
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
         }
-        .contact-info-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
+        
+        .navbar-toggler {
+            border-color: var(--border-grey);
         }
-        .contact-info-card p {
-            color: var(--text-light);
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
-        .contact-form-section {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            max-width: 800px;
-            margin: 0 auto;
+        
+        .nav-link {
+            color: var(--text-grey);
+            font-weight: 500;
+            margin: 0 0.8rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
-        .contact-form-section h2 {
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            text-align: center;
+        
+        .nav-link:hover {
+            color: var(--text-white);
         }
-        .form-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+        
+        .btn-primary-custom {
+            background: var(--accent-yellow);
+            color: var(--dark-bg);
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background: #ffd633;
+            color: var(--dark-bg);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: var(--dark-card);
+            padding: 120px 0 60px;
+            border-bottom: 1px solid var(--border-grey);
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 0.8rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 0;
+        }
+        
+        .contact-card {
+            background: var(--dark-card);
+            border: 1px solid var(--border-grey);
+            border-radius: 12px;
+            padding: 2.5rem;
+            height: 100%;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--dark-grey);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
         }
-        .form-group {
-            display: flex;
-            flex-direction: column;
+        
+        .contact-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 1rem;
         }
-        .form-group label {
+        
+        .contact-card p {
+            color: var(--text-grey);
+            line-height: 1.8;
+            font-size: 0.95rem;
             margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
         }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 12px;
-            border: 2px solid #e0e0e0;
+        
+        .contact-card a {
+            color: var(--text-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        /* Form */
+        .form-card {
+            background: var(--dark-card);
+            border: 1px solid var(--border-grey);
+            border-radius: 12px;
+            padding: 2.5rem;
+        }
+        
+        .form-card h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            color: var(--text-grey);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .form-control, .form-select, textarea {
+            background: var(--dark-grey);
+            border: 1px solid var(--border-grey);
             border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s;
+            padding: 0.8rem 1rem;
+            font-family: 'Comfortaa', cursive;
+            color: var(--text-white);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
+        
+        .form-control::placeholder, textarea::placeholder {
+            color: var(--text-muted);
         }
-        .form-group textarea {
+        
+        .form-control:focus, .form-select:focus, textarea:focus {
+            background: var(--dark-grey);
+            border-color: var(--light-grey);
+            box-shadow: none;
+            color: var(--text-white);
+        }
+        
+        .form-select option {
+            background: var(--dark-card);
+            color: var(--text-white);
+        }
+        
+        textarea {
             resize: vertical;
             min-height: 120px;
         }
-        .submit-btn {
-            width: 100%;
-            margin-top: 1rem;
-        }
-        .map-section {
-            margin-top: 3rem;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        .map-section iframe {
-            width: 100%;
-            height: 400px;
+        
+        .btn-submit {
+            background: var(--accent-yellow);
+            color: var(--dark-bg);
             border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #ffd633;
+            color: var(--dark-bg);
+            transform: translateY(-2px);
+        }
+        
+        /* Map */
+        .map-container {
+            background: var(--dark-card);
+            border: 1px solid var(--border-grey);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 400px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(1) invert(1);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-card);
+            color: var(--text-grey);
+            padding: 3rem 0 1.5rem;
+            border-top: 1px solid var(--border-grey);
+            margin-top: 4rem;
+        }
+        
+        footer h5 {
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-white);
+            font-size: 1rem;
+        }
+        
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        footer ul li {
+            margin-bottom: 0.7rem;
+        }
+        
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        footer a:hover {
+            color: var(--text-white);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: var(--dark-grey);
+            color: var(--text-grey);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            margin-right: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .social-icons a:hover {
+            background: var(--medium-grey);
+            color: var(--text-white);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-grey);
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 1rem;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 55px;
+            font-size: 26px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand img {
+                height: 38px;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <i class="fas fa-plane-departure"></i>
-                    <span>HappyMyTrip</span>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="destinations.html">Destinations</a></li>
-                    <li><a href="packages.html">Packages</a></li>
-                    <li><a href="hotels.html">Hotels</a></li>
-                    <li><a href="flights.html">Flights</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+            <a class="navbar-brand" href="index.html">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/84b31048-4852-45ba-ae66-49a1a7ff59b7/2026-01-17T14-15-49-346Z-84b5fd9d-chat-image-1768659349323-0.jpg" alt="HappyMyTrip">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="holidays.html">Holidays</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#flights">Flights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hotels">Hotels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="btn btn-primary-custom">Get Quote</a>
+                    </li>
                 </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </div>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Contact Us</h1>
-            <p>We're here to help you plan your perfect journey</p>
+            <h1 data-aos="fade-up">Get in Touch</h1>
+            <p data-aos="fade-up" data-aos-delay="100">We're here to help plan your perfect journey. Reach out to us anytime!</p>
         </div>
     </section>
 
-    <section class="contact-page">
+    <!-- Contact Info -->
+    <section class="contact-section">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info-card">
-                    <i class="fas fa-phone"></i>
-                    <h3>Call Us</h3>
-                    <p>+1 (800) 123-4567</p>
-                    <p>+1 (800) 123-4568</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">Mon-Fri: 9AM - 6PM</p>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p>Speak directly with our travel experts</p>
+                        <p><a href="tel:+919619584583">+91 96195 84583</a></p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Mon - Sat: 9:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</p>
+                    </div>
                 </div>
-                <div class="contact-info-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email Us</h3>
-                    <p>info@happymytrip.com</p>
-                    <p>support@happymytrip.com</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">24/7 Email Support</p>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email Us</h3>
+                        <p>Send us your travel requirements</p>
+                        <p><a href="mailto:care@happymytrip.com">care@happymytrip.com</a></p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">We respond within 2-4 hours<br>during business hours</p>
+                    </div>
                 </div>
-                <div class="contact-info-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Visit Us</h3>
-                    <p>123 Travel Street</p>
-                    <p>New York, NY 10001</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">United States</p>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Visit Us</h3>
+                        <p>203, Sai Anant Apartment<br>
+                        Sector 19/C, Koparkhairane<br>
+                        Navi Mumbai - 400709<br>
+                        Maharashtra, India</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="contact-form-section">
-                <h2>Send Us a Message</h2>
-                <form>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
-                        </div>
+            <!-- Contact Form & Map -->
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="form-card">
+                        <h2>Send Us a Message</h2>
+                        <form action="mailto:care@happymytrip.com" method="get">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Your Name *</label>
+                                    <input type="text" class="form-control" placeholder="Full Name" name="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" name="phone" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" placeholder="your@email.com" name="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Travel Type</label>
+                                    <select class="form-select" name="type">
+                                        <option>Domestic Holiday</option>
+                                        <option>International Holiday</option>
+                                        <option>Flight Booking</option>
+                                        <option>Hotel Booking</option>
+                                        <option>Car Rental</option>
+                                        <option>Corporate Travel</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Preferred Travel Date</label>
+                                    <input type="date" class="form-control" name="date">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Your Message *</label>
+                                    <textarea class="form-control" placeholder="Tell us about your travel plans, preferences, budget, etc." name="message" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="booking">Booking Inquiry</option>
-                                <option value="package">Package Information</option>
-                                <option value="support">Customer Support</option>
-                                <option value="feedback">Feedback</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
-                </form>
-            </div>
+                </div>
 
-            <div class="map-section">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0234567890123!2d73.0123456789012!3d19.0987654321098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA1JzU1LjYiTiA3M8KwMDAnNDQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+                    <div class="contact-card mt-4">
+                        <h3>Connect on Social Media</h3>
+                        <p style="margin-bottom: 1.5rem;">Follow us for travel inspiration, deals, and updates</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/happymytrip" target="_blank" style="width: 45px; height: 45px; line-height: 45px; font-size: 1.1rem;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/happymytrip_" target="_blank" style="width: 45px; height: 45px; line-height: 45px; font-size: 1.1rem;"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com/HappyMyTrip_" target="_blank" style="width: 45px; height: 45px; line-height: 45px; font-size: 1.1rem;"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/happymytrip-com/" target="_blank" style="width: 45px; height: 45px; line-height: 45px; font-size: 1.1rem;"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/919619584583" target="_blank" style="width: 45px; height: 45px; line-height: 45px; font-size: 1.1rem; background: #25D366;"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <i class="fas fa-plane-departure"></i>
-                        <span>HappyMyTrip</span>
-                    </div>
-                    <p>Your trusted travel partner for unforgettable journeys around the world.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/84b31048-4852-45ba-ae66-49a1a7ff59b7/2026-01-17T14-15-49-346Z-84b5fd9d-chat-image-1768659349323-0.jpg" alt="HappyMyTrip" class="footer-logo">
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">Your trusted travel partner since 2017. Creating memorable journeys across the globe.</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.facebook.com/happymytrip" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/happymytrip_" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/HappyMyTrip_" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/happymytrip-com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/919619584583" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Quick Links</h5>
                     <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="holidays.html">Holiday Packages</a></li>
+                        <li><a href="#flights">Flight Booking</a></li>
+                        <li><a href="#hotels">Hotels</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="destinations.html">Destinations</a></li>
-                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Packages</h5>
                     <ul>
-                        <li><a href="flights.html">Flight Booking</a></li>
-                        <li><a href="hotels.html">Hotel Booking</a></li>
-                        <li><a href="buses.html">Bus Tickets</a></li>
-                        <li><a href="cars.html">Car Rentals</a></li>
+                        <li><a href="package-kashmir.html">Kashmir Paradise</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Goa Enquiry">Goa Beach Escape</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Dubai Enquiry">Dubai Extravaganza</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Maldives Enquiry">Maldives Honeymoon</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Rajasthan Enquiry">Royal Rajasthan</a></li>
+                        <li><a href="mailto:care@happymytrip.com?subject=Kerala Enquiry">Kerala Backwaters</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem; font-size: 0.9rem;">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>
+                            203, Sai Anant Apartment,<br>
+                            <span style="padding-left: 20px;">Sector 19/C, Koparkhairane,</span><br>
+                            <span style="padding-left: 20px;">Navi Mumbai - 400709</span>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;">
+                            <i class="fas fa-phone" style="margin-right: 8px;"></i>
+                            <a href="tel:+919619584583">+91 96195 84583</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+                            <a href="mailto:care@happymytrip.com">care@happymytrip.com</a>
+                        </li>
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 HappyMyTrip. All rights reserved.</p>
+                <p>&copy; 2024 HappyMyTrip. All Rights Reserved.</p>
+                <p style="margin-top: 0.5rem;">Proud Members: ADTOI | ETTAA</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919619584583?text=Hi%20HappyMyTrip!%20I%20would%20like%20to%20get%20in%20touch." target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+    </script>
 </body>
 </html>
